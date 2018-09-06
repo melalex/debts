@@ -41,6 +41,10 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    javaMoneyVersion = '1.0.3'
+}
+
 dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-neo4j'
@@ -51,6 +55,8 @@ dependencies {
     compile group: 'org.jetbrains.kotlin', name: 'kotlin-reflect'
 
     compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin'
+
+    compile group: 'javax.money', name: 'money-api', version: javaMoneyVersion
 
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
     testCompile group: 'org.springframework.security', name: 'spring-security-test'
