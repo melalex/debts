@@ -15,10 +15,11 @@ data class User(
         @GeneratedValue
         val id: Long,
         val name: String,
+        val image: String,
 
         @Relationship(type = LENTS)
-        val debtor: List<User>,
+        val debtor: List<User> = listOf(),
 
         @Relationship(type = IGNORES)
-        val blackList: List<User>
+        val blackList: List<User> = listOf()
 )
