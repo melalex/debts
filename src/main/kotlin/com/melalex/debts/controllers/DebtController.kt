@@ -16,7 +16,7 @@ class DebtController(private val debtFacade: DebtFacade) {
     @PostMapping("/borrow")
     fun borrow(debtDto: DebtDto): Mono<DebtDto> = Mono.empty()
 
-    @PostMapping("/borrow")
+    @PostMapping("/lend")
     fun lend(debtDto: DebtDto): Mono<DebtDto> = Mono.empty()
 
     @GetMapping("/debts")

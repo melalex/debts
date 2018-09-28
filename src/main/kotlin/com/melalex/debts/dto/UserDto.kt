@@ -2,7 +2,7 @@ package com.melalex.debts.dto
 
 data class UserDto(
 
-        val id: Long,
-        val name: String = "",
-        val image: String = ""
+        var id: Long = 0,
+        var name: String = "",
+        var image: String = ""
 )

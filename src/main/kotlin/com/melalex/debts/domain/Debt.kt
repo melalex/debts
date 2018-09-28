@@ -9,10 +9,10 @@ import javax.money.MonetaryAmount
 data class Debt(
 
         @StartNode
-        val borrower: User,
+        var borrower: User,
 
         @EndNode
-        val debtor: User,
+        var debtor: User,
 
-        val amount: MonetaryAmount
+        var amount: MonetaryAmount
 )

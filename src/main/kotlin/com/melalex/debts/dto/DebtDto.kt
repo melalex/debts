@@ -4,6 +4,6 @@ import javax.money.MonetaryAmount
 
 data class DebtDto(
 
-        val user: UserDto,
-        val amount: MonetaryAmount
+        var user: UserDto,
+        var amount: MonetaryAmount
 )
