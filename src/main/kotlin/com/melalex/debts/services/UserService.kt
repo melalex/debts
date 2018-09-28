@@ -1,6 +1,9 @@
 package com.melalex.debts.services
 
-import org.springframework.stereotype.Service
+import com.melalex.debts.domain.User
+import reactor.core.publisher.Flux
 
-@Service
-class UserService
+interface UserService {
+
+    fun findUsersByName(name: String): Flux<User>
+}

@@ -4,6 +4,7 @@ import com.melalex.debts.domain.Debt
 import com.melalex.debts.domain.User
 import org.springframework.data.neo4j.annotation.Query
 import org.springframework.data.neo4j.repository.Neo4jRepository
+import reactor.core.publisher.Flux
 import java.util.*
 
 // @formatter:off
@@ -19,4 +20,6 @@ interface UserRepository : Neo4jRepository<User, Long> {
 
     @Query(FIND_DEBTS_QUERY)
     fun findDebts(borrower: User, debtor: User): Optional<Debt>
+
+    fun findByName(name: String) : Flux<User>
 }

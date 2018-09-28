@@ -1,7 +1,7 @@
 package com.melalex.debts.controllers
 
 import com.melalex.debts.dto.DebtDto
-import com.melalex.debts.services.DebtService
+import com.melalex.debts.facades.DebtFacade
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono
 
 @RestController
 @RequestMapping("/api/v1/user/current")
-class DebtController(val debtService: DebtService) {
+class DebtController(private val debtFacade: DebtFacade) {
 
     @PostMapping("/borrow")
     fun borrow(debtDto: DebtDto): Mono<DebtDto> = Mono.empty()

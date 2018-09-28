@@ -2,14 +2,19 @@ buildscript {
     ext {
         kotlinVersion = '1.2.51'
         springBootVersion = '2.0.4.RELEASE'
+        aptVersion = '0.18'
     }
     repositories {
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+        classpath("net.ltgt.gradle:gradle-apt-plugin:${aptVersion}")
     }
 }
 
@@ -43,6 +48,7 @@ repositories {
 
 ext {
     javaMoneyVersion = '1.0.3'
+    mapStructVersion = '1.2.0.Final'
 }
 
 dependencies {
@@ -53,10 +59,13 @@ dependencies {
 
     compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk8'
     compile group: 'org.jetbrains.kotlin', name: 'kotlin-reflect'
+    compile group: 'org.mapstruct', name: 'mapstruct-jdk8', version: mapStructVersion
 
     compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin'
 
     compile group: 'javax.money', name: 'money-api', version: javaMoneyVersion
+
+    annotationProcessor group: 'org.mapstruct', name: 'mapstruct-processor', version: mapStructVersion
 
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
     testCompile group: 'org.springframework.security', name: 'spring-security-test'
